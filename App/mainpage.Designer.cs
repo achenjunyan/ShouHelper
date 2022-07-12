@@ -32,13 +32,12 @@ namespace ShouHelper
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusLED = new System.Windows.Forms.ToolStripStatusLabel();
             this.versonInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.tipsInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.savepassword_checkBox = new System.Windows.Forms.CheckBox();
-            this.RichTextBox1 = new System.Windows.Forms.RichTextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.seePassword_pic = new System.Windows.Forms.PictureBox();
-            this.statusLED = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.passwordBox = new System.Windows.Forms.PictureBox();
@@ -87,6 +86,13 @@ namespace ShouHelper
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // statusLED
+            // 
+            this.statusLED.Image = global::ShouHelper.Properties.Resources.loading;
+            this.statusLED.Name = "statusLED";
+            this.statusLED.Size = new System.Drawing.Size(111, 24);
+            this.statusLED.Text = "状态指示|";
+            // 
             // versonInfo
             // 
             this.versonInfo.Name = "versonInfo";
@@ -110,14 +116,6 @@ namespace ShouHelper
             this.savepassword_checkBox.Text = "下次自动登录";
             this.savepassword_checkBox.UseVisualStyleBackColor = true;
             this.savepassword_checkBox.CheckedChanged += new System.EventHandler(this.savepassword_checkBox_CheckedChanged);
-            // 
-            // RichTextBox1
-            // 
-            this.RichTextBox1.Location = new System.Drawing.Point(140, 588);
-            this.RichTextBox1.Name = "RichTextBox1";
-            this.RichTextBox1.Size = new System.Drawing.Size(325, 163);
-            this.RichTextBox1.TabIndex = 12;
-            this.RichTextBox1.Text = "";
             // 
             // loginButton
             // 
@@ -147,13 +145,6 @@ namespace ShouHelper
             this.seePassword_pic.TabStop = false;
             this.seePassword_pic.Visible = false;
             this.seePassword_pic.Click += new System.EventHandler(this.seePassword_pic_Click);
-            // 
-            // statusLED
-            // 
-            this.statusLED.Image = global::ShouHelper.Properties.Resources.loading;
-            this.statusLED.Name = "statusLED";
-            this.statusLED.Size = new System.Drawing.Size(111, 24);
-            this.statusLED.Text = "状态指示|";
             // 
             // pictureBox6
             // 
@@ -203,7 +194,6 @@ namespace ShouHelper
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(687, 918);
-            this.Controls.Add(this.RichTextBox1);
             this.Controls.Add(this.savepassword_checkBox);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.seePassword_pic);
@@ -218,6 +208,7 @@ namespace ShouHelper
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "loginPage";
             this.Text = "VRChat助手";
+            this.Load += new System.EventHandler(this.loginPage_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -246,7 +237,6 @@ namespace ShouHelper
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.ToolStripStatusLabel tipsInfo;
         private System.Windows.Forms.CheckBox savepassword_checkBox;
-        private System.Windows.Forms.RichTextBox RichTextBox1;
     }
 }
 
